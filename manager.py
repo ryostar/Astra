@@ -33,8 +33,8 @@ def banner():
     ]
     for char in b:
         print(f'{random.choice(colors)}{char}{n}')
-    #print('=============SON OF GENISYS==============')
-    print(f'   Version: 1.0 | Author: Cryptonian{n}\n')
+    #print('=============@HISABO==============')
+    print(f'   Version: 1.0 | Phát triển: Sabo{n}\n')
 
 def clr():
     if os.name == 'nt':
@@ -45,30 +45,30 @@ def clr():
 while True:
     clr()
     banner()
-    print(lg+'[1] Add new accounts'+n)
-    print(lg+'[2] Filter all banned accounts'+n)
-    print(lg+'[3] Delete specific accounts'+n)
-    print(lg+'[4] Update your Astra'+n)
-    print(lg+'[5] Quit'+n)
-    a = int(input('\nEnter your choice: '))
+    print(lg+'[1] Thêm tài khoản mới'+n)
+    print(lg+'[2] Lọc tài khoản bị khóa'+n)
+    print(lg+'[3] Xóa tài khoản'+n)
+    print(lg+'[4] Nâng cấp'+n)
+    print(lg+'[5] Thoát'+n)
+    a = int(input('\nNhập tùy chọn của bạn: '))
     if a == 1:
         new_accs = []
         with open('vars.txt', 'ab') as g:
-            number_to_add = int(input(f'\n{lg} [~] Enter number of accounts to add: {r}'))
+            number_to_add = int(input(f'\n{lg} [~] Nhập số lượng tài khoản muốn thêm: {r}'))
             for i in range(number_to_add):
-                phone_number = str(input(f'\n{lg} [~] Enter Phone Number: {r}'))
+                phone_number = str(input(f'\n{lg} [~] Nhập số điện thoại: {r}'))
                 parsed_number = ''.join(phone_number.split())
                 pickle.dump([parsed_number], g)
                 new_accs.append(parsed_number)
-            print(f'\n{lg} [i] Saved all accounts in vars.txt')
+            print(f'\n{lg} [i] Lưu tất cả tài khoản trong vars.txt')
             clr()
-            print(f'\n{lg} [*] Logging in from new accounts\n')
+            print(f'\n{lg} [*] Đăng nhập từ tài khoản mới\n')
             for number in new_accs:
                 c = TelegramClient(f'sessions/{number}', 3910389 , '86f861352f0ab76a251866059a6adbd6')
                 c.start(number)
-                print(f'{lg}[+] Login successful')
+                print(f'{lg}[+] Đăng nhập thành công')
                 c.disconnect()
-            input(f'\n Press enter to goto main menu...')
+            input(f'\n Nhấp Enter để về menu chính...')
 
         g.close()
     elif a == 2:
@@ -82,7 +82,7 @@ while True:
                 break
         h.close()
         if len(accounts) == 0:
-            print(r+'[!] There are no accounts! Please add some and retry')
+            print(r+'[!] Không có tài khoản!  Vui lòng thêm một số và thử lại')
             sleep(3)
         else:
             for account in accounts:
