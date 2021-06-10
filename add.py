@@ -168,7 +168,7 @@ print(f'{success}{lg} -- Thêm thành viên từ {w}{len(to_use)}{lg} tài kho�
 adding_status = 0
 approx_members_count = 0
 for acc in to_use:
-    stop = index + 60
+    stop = index + 49
     c = TelegramClient(f'sessions/{acc[0]}', 3910389 , '86f861352f0ab76a251866059a6adbd6')
     c.start()
     acc_name = c.get_me().first_name
