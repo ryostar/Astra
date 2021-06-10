@@ -24,17 +24,18 @@ def banner():
     import random
     # fancy logo
     b = [
-    '   _____             __',
-    '  /  _  \    _______/  |_____________',
-    ' /  /_\  \  /  ___/\   __\_  __ \__  \\',
-    '/    |    \ \___ \  |  |  |  | \// __ \_',
-    '\____|__  /____  >  |__|  |__|  (____   /',
-    '        \/     \/                     \/'
+    '   #####     #    ######  #######',
+    '  #     #   # #   #     # #     #',
+    '  #        #   #  #     # #     #', 
+    '   #####  #     # ######  #     #', 
+    '        # ####### #     # #     #', 
+    '  #     # #     # #     # #     #', 
+    '   #####  #     # ######  #######' 
     ]
     for char in b:
         print(f'{random.choice(colors)}{char}{n}')
-    #print('=============SON OF GENISYS==============')
-    print(f'   Version: 1.0 | Author: Cryptonian{n}\n')
+    print('=============SABO==============')
+    print(f'   Version: 1.0 | Tác giả: Sabo{n}\n')
 
 def clr():
     if os.name == 'nt':
@@ -45,12 +46,12 @@ def clr():
 while True:
     clr()
     banner()
-    print(lg+'[1] Add new accounts'+n)
-    print(lg+'[2] Filter all banned accounts'+n)
-    print(lg+'[3] Delete specific accounts'+n)
-    print(lg+'[4] Update your Astra'+n)
+    print(lg+'[1] Thêm tài khoản mới'+n)
+    print(lg+'[2] Lọc tất cả các tài khoản bị cấm'+n)
+    print(lg+'[3] Xóa các tài khoản cụ thể'+n)
+    print(lg+'[4] Cập nhật code của bạn'+n)
     print(lg+'[5] Quit'+n)
-    a = int(input('\nEnter your choice: '))
+    a = int(input('\nNhập sự lựa chọn của bạn: '))
     if a == 1:
         new_accs = []
         with open('vars.txt', 'ab') as g:
